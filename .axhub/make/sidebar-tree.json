@@ -1,7 +1,73 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-12T17:48:16.008Z",
+  "updatedAt": "2026-09-13T16:23:11.216Z",
   "prototypes": [
+    {
+      "id": "item-prototypes-erp-portal",
+      "kind": "item",
+      "title": "erp portal",
+      "itemKey": "prototypes/erp-portal"
+    },
+    {
+      "id": "item-prototypes-erp-system",
+      "kind": "item",
+      "title": "erp system",
+      "itemKey": "prototypes/erp-system"
+    },
+    {
+      "id": "item-prototypes-erp-aftersales",
+      "kind": "item",
+      "title": "erp aftersales",
+      "itemKey": "prototypes/erp-aftersales"
+    },
+    {
+      "id": "item-prototypes-erp-finance",
+      "kind": "item",
+      "title": "erp finance",
+      "itemKey": "prototypes/erp-finance"
+    },
+    {
+      "id": "item-prototypes-erp-logistics",
+      "kind": "item",
+      "title": "erp logistics",
+      "itemKey": "prototypes/erp-logistics"
+    },
+    {
+      "id": "item-prototypes-erp-reports",
+      "kind": "item",
+      "title": "erp reports",
+      "itemKey": "prototypes/erp-reports"
+    },
+    {
+      "id": "item-prototypes-erp-inventory",
+      "kind": "item",
+      "title": "erp inventory",
+      "itemKey": "prototypes/erp-inventory"
+    },
+    {
+      "id": "item-prototypes-erp-procurement",
+      "kind": "item",
+      "title": "erp procurement",
+      "itemKey": "prototypes/erp-procurement"
+    },
+    {
+      "id": "item-prototypes-erp-dashboard",
+      "kind": "item",
+      "title": "erp dashboard",
+      "itemKey": "prototypes/erp-dashboard"
+    },
+    {
+      "id": "item-prototypes-erp-orders",
+      "kind": "item",
+      "title": "erp orders",
+      "itemKey": "prototypes/erp-orders"
+    },
+    {
+      "id": "item-prototypes-erp-products",
+      "kind": "item",
+      "title": "erp products",
+      "itemKey": "prototypes/erp-products"
+    },
     {
       "id": "item-prototypes-accounting-app",
       "kind": "item",
