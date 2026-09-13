@@ -1,0 +1,607 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "accounting-app",
+    "pageId": "accounting",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "filter-bar",
+        "index": 1,
+        "title": "筛选栏",
+        "pageId": "accounting",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"filter-bar\"]"],
+          "fingerprint": "div|data-annotation-id=filter-bar",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "筛选栏包含两个按钮：日期筛选和分类筛选。日期筛选点击弹出月份选择器，分类筛选点击弹出全部分类列表。筛选后按钮高亮，支持重置恢复全部数据。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "stats-card",
+        "index": 2,
+        "title": "统计卡片",
+        "pageId": "accounting",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"stats-card\"]"],
+          "fingerprint": "div|data-annotation-id=stats-card",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "统计卡片展示当月收入、支出、结余和月度预算进度条。右上角有月/年切换按钮，点击触发卡片翻转动效。预算为0时隐藏进度条。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "bill-list",
+        "index": 3,
+        "title": "账单列表",
+        "pageId": "accounting",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"bill-list\"]"],
+          "fingerprint": "div|data-annotation-id=bill-list",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "账单列表按月份倒序分组，月份栏显示当月收入和支出汇总。单条账单展示日期、分类图标、分类名称、备注（有则显示）、时间和金额。点击单条账单进入账单编辑页。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "floating-btn",
+        "index": 4,
+        "title": "悬浮记账按钮",
+        "pageId": "accounting",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"floating-btn\"]"],
+          "fingerprint": "div|data-annotation-id=floating-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "悬浮记账按钮固定在页面右下角。单击进入普通记账页，长按500ms进入AI记账页。",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "login-header",
+        "index": 12,
+        "title": "登录页头部",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"login-header\"]"],
+          "fingerprint": "div|data-annotation-id=login-header",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "登录页头部显示应用Logo、名称和Slogan。点击Logo区域无交互。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "phone-input",
+        "index": 13,
+        "title": "手机号输入",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"phone-input\"]"],
+          "fingerprint": "div|data-annotation-id=phone-input",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "手机号输入框最多11位数字，输入后自动唤起数字键盘。输入为空时获取验证码按钮置灰。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "get-code-btn",
+        "index": 14,
+        "title": "获取验证码按钮",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"get-code-btn\"]"],
+          "fingerprint": "button|data-annotation-id=get-code-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "获取验证码按钮点击后，如果未勾选用户协议会弹出确认弹窗。同意后跳转验证码页面。\n\n**按钮状态：**\n- **置灰状态**：手机号输入框为空时，按钮置灰不可点击。样式为灰色背景、白色文字。\n- **正常状态**：手机号输入框有内容时，按钮可点击。样式为蓝色背景、白色文字。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "controls": [
+          {
+            "type": "segmented",
+            "attributeId": "btn_state",
+            "displayName": "按钮状态",
+            "info": "切换获取验证码按钮的展示状态。",
+            "initialValue": "disabled",
+            "options": [
+              { "label": "置灰", "value": "disabled" },
+              { "label": "正常", "value": "normal" }
+            ]
+          }
+        ],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "wechat-login-btn",
+        "index": 15,
+        "title": "微信登录按钮",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"wechat-login-btn\"]"],
+          "fingerprint": "button|data-annotation-id=wechat-login-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "微信登录按钮点击后，调用微信SDK拉起微信授权弹窗。授权成功后直接登录进入记账Tab。首次登录会自动注册账号。",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "login-agreement",
+        "index": 16,
+        "title": "用户协议",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"login-agreement\"]"],
+          "fingerprint": "div|data-annotation-id=login-agreement",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "用户协议复选框，未勾选时点击获取验证码会弹出确认弹窗。点击《用户协议》或《隐私协议》可查看对应文档。",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "agreement-confirm-modal",
+        "index": 17,
+        "title": "协议确认弹窗",
+        "pageId": "login",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"agreement-confirm-modal\"]"],
+          "fingerprint": "div|data-annotation-id=agreement-confirm-modal",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "用户协议确认弹窗，点击取消关闭弹窗，点击同意并继续自动勾选协议并跳转验证码页面。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "resend-btn",
+        "index": 23,
+        "title": "重新获取验证码按钮",
+        "pageId": "verification",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"resend-btn\"]"],
+          "fingerprint": "div|data-annotation-id=resend-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "重新获取验证码按钮有两种状态：\n\n**按钮状态：**\n- **冷却状态**：显示\"XX秒后重新获取\"，灰色文字，不可点击。60秒倒计时结束后自动切换为激活状态。\n- **激活状态**：显示\"重新获取验证码\"，蓝色文字按钮，可点击。点击后重新发送验证码并进入60秒冷却。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "controls": [
+          {
+            "type": "segmented",
+            "attributeId": "resend_state",
+            "displayName": "按钮状态",
+            "info": "切换重新获取验证码按钮的展示状态。",
+            "initialValue": "cooldown",
+            "options": [
+              { "label": "冷却", "value": "cooldown" },
+              { "label": "激活", "value": "active" }
+            ]
+          }
+        ],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "type-tabs",
+        "index": 5,
+        "title": "收支切换",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"type-tabs\"]"],
+          "fingerprint": "div|data-annotation-id=type-tabs",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "收支切换Tab用于选择记账类型。切换时会清空已选分类，分类区同步刷新对应类型的分类列表。默认选中支出。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "amount-input",
+        "index": 6,
+        "title": "金额输入",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"amount-input\"]"],
+          "fingerprint": "div|data-annotation-id=amount-input",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "金额输入框自动唤起数字键盘。金额为空时保存按钮置灰不可点击。输入金额最多精确到小数点后2位。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "category-grid",
+        "index": 7,
+        "title": "分类选择",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"category-grid\"]"],
+          "fingerprint": "div|data-annotation-id=category-grid",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "分类区每行4个图标，前7个按用户使用频率排序，第8个为更多按钮。点击更多弹出底部弹窗，弹窗内分类按系统预置在前、自定义在后排列。选中分类后高亮显示。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "time-picker",
+        "index": 8,
+        "title": "记账时间",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"time-picker\"]"],
+          "fingerprint": "div|data-annotation-id=time-picker",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "记账时间默认为当天。点击弹出日期选择器，精确到日。时间一旦选择不可修改，记录当前系统时间。",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "note-input",
+        "index": 9,
+        "title": "备注输入",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"note-input\"]"],
+          "fingerprint": "div|data-annotation-id=note-input",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "备注输入框最多50字，可为空。保存时备注与账单一起存储，编辑时可修改。",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "save-btn",
+        "index": 10,
+        "title": "保存按钮",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"save-btn\"]"],
+          "fingerprint": "button|data-annotation-id=save-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "保存按钮在分类未选或金额为空时置灰不可点击。点击保存后账单入库，返回记账Tab并刷新列表。保存成功后显示Toast提示。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "category-picker",
+        "index": 11,
+        "title": "分类选择弹窗",
+        "pageId": "add-bill",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"category-picker\"]"],
+          "fingerprint": "div|data-annotation-id=category-picker",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "底部弹窗显示全部分类，按系统预置在前、自定义在后排列，每行4个。弹窗底部有新增分类入口。新增分类弹窗可选择收支类型、输入分类名称、点击AI生成图标后保存。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "category-manage-header",
+        "index": 18,
+        "title": "分类管理头部",
+        "pageId": "category-manage",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"category-manage-header\"]"],
+          "fingerprint": "div|data-annotation-id=category-manage-header",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "分类管理页面头部，显示返回按钮和页面标题。点击返回按钮回到我的Tab页。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "category-tabs",
+        "index": 19,
+        "title": "分类Tab切换",
+        "pageId": "category-manage",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"category-tabs\"]"],
+          "fingerprint": "div|data-annotation-id=category-tabs",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "支出/收入Tab切换，切换时同步刷新下方分类列表。默认选中支出。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "category-list",
+        "index": 20,
+        "title": "分类列表",
+        "pageId": "category-manage",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"category-list\"]"],
+          "fingerprint": "div|data-annotation-id=category-list",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "分类列表分两个区域：系统预置分类（不可删除）和自定义分类（可编辑、删除）。长按自定义分类可拖拽排序。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "add-category-btn",
+        "index": 21,
+        "title": "新增分类按钮",
+        "pageId": "category-manage",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"add-category-btn\"]"],
+          "fingerprint": "button|data-annotation-id=add-category-btn",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "新增分类按钮，点击弹出新增分类弹窗。每类最多30个自定义分类，达到上限后按钮置灰。",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "add-category-modal",
+        "index": 22,
+        "title": "新增分类弹窗",
+        "pageId": "category-manage",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"add-category-modal\"]"],
+          "fingerprint": "div|data-annotation-id=add-category-modal",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "新增分类弹窗，包含分类名称输入框和AI生成图标按钮。输入名称后点击AI生成图标，调用后端接口生成对应图标。保存后分类立即生效。",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "accounting-pages",
+        "title": "记账模块",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-login",
+            "title": "登录页",
+            "route": "login"
+          },
+          {
+            "type": "route",
+            "id": "route-verification",
+            "title": "验证码页",
+            "route": "verification"
+          },
+          {
+            "type": "route",
+            "id": "route-accounting",
+            "title": "记账Tab主页",
+            "route": "accounting"
+          },
+          {
+            "type": "route",
+            "id": "route-add-bill",
+            "title": "普通记账页",
+            "route": "add-bill"
+          },
+          {
+            "type": "route",
+            "id": "route-ai-bill",
+            "title": "AI记账页",
+            "route": "ai-bill"
+          },
+          {
+            "type": "route",
+            "id": "route-edit-bill",
+            "title": "账单编辑页",
+            "route": "edit-bill"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "statistics-pages",
+        "title": "统计模块",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-statistics",
+            "title": "统计Tab页",
+            "route": "statistics"
+          },
+          {
+            "type": "route",
+            "id": "route-share",
+            "title": "分享H5页",
+            "route": "share"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "profile-pages",
+        "title": "我的模块",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-profile",
+            "title": "我的Tab页",
+            "route": "profile"
+          },
+          {
+            "type": "route",
+            "id": "route-profile-edit",
+            "title": "个人信息编辑",
+            "route": "profile-edit"
+          },
+          {
+            "type": "route",
+            "id": "route-account-security",
+            "title": "账号与安全",
+            "route": "account-security"
+          },
+          {
+            "type": "route",
+            "id": "route-category-manage",
+            "title": "分类管理",
+            "route": "category-manage"
+          },
+          {
+            "type": "route",
+            "id": "route-budget-setting",
+            "title": "预算设置",
+            "route": "budget-setting"
+          },
+          {
+            "type": "route",
+            "id": "route-reminder-setting",
+            "title": "记账提醒",
+            "route": "reminder-setting"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-login",
+            "title": "登录模块PRD",
+            "markdownPath": "docs/prd-01-login.md"
+          },
+          {
+            "type": "markdown",
+            "id": "prd-accounting",
+            "title": "记账模块PRD",
+            "markdownPath": "docs/prd-02-accounting.md"
+          },
+          {
+            "type": "markdown",
+            "id": "prd-statistics",
+            "title": "统计模块PRD",
+            "markdownPath": "docs/prd-03-statistics.md"
+          },
+          {
+            "type": "markdown",
+            "id": "prd-profile",
+            "title": "我的模块PRD",
+            "markdownPath": "docs/prd-04-profile.md"
+          },
+          {
+            "type": "markdown",
+            "id": "prd-design",
+            "title": "设计规范PRD",
+            "markdownPath": "docs/prd-05-design.md"
+          }
+        ]
+      }
+    ]
+  }
+}

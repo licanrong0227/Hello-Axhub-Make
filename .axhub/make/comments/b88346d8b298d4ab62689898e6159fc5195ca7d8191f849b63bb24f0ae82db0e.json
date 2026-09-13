@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 3,
+  "kind": "document-edit-comments",
+  "resource": {
+    "id": "b88346d8b298d4ab62689898e6159fc5195ca7d8191f849b63bb24f0ae82db0e",
+    "targetPath": "src/prototypes/accounting-app/.spec/spec.md",
+    "filePath": ".axhub/make/comments/b88346d8b298d4ab62689898e6159fc5195ca7d8191f849b63bb24f0ae82db0e.json"
+  },
+  "comments": [],
+  "images": [],
+  "documentPath": "src/prototypes/accounting-app/.spec/spec.md"
+}

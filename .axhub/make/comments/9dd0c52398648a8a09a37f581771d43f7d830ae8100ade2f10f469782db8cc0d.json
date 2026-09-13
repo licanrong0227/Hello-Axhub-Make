@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 3,
+  "kind": "document-edit-comments",
+  "resource": {
+    "id": "9dd0c52398648a8a09a37f581771d43f7d830ae8100ade2f10f469782db8cc0d",
+    "targetPath": "src/prototypes/beginner-guide/.spec/spec.html",
+    "filePath": ".axhub/make/comments/9dd0c52398648a8a09a37f581771d43f7d830ae8100ade2f10f469782db8cc0d.json"
+  },
+  "comments": [],
+  "images": [],
+  "documentPath": "src/prototypes/beginner-guide/.spec/spec.html"
+}

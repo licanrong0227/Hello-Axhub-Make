@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "readerVersion": "1.0.0",
+  "platform": "mobile",
+  "terms": ["finance", "accounting", "budget", "记账", "财务"],
+  "hardFilters": {
+    "industries": ["finance-payments"],
+    "productTypes": ["consumer-app"]
+  },
+  "softFilters": {
+    "styles": ["clean", "minimal"],
+    "brandTraits": ["calm", "trustworthy", "friendly"]
+  },
+  "limit": 4
+}

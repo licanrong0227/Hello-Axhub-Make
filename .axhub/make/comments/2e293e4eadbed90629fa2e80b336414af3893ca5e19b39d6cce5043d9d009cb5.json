@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 3,
+  "kind": "document-edit-comments",
+  "resource": {
+    "id": "2e293e4eadbed90629fa2e80b336414af3893ca5e19b39d6cce5043d9d009cb5",
+    "targetPath": "src/prototypes/touch-and-talk-annotation-demo/.spec/spec.md",
+    "filePath": ".axhub/make/comments/2e293e4eadbed90629fa2e80b336414af3893ca5e19b39d6cce5043d9d009cb5.json"
+  },
+  "comments": [],
+  "images": [],
+  "documentPath": "src/prototypes/touch-and-talk-annotation-demo/.spec/spec.md"
+}

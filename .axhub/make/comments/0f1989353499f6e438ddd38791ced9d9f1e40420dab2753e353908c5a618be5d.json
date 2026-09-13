@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 3,
+  "kind": "document-edit-comments",
+  "resource": {
+    "id": "0f1989353499f6e438ddd38791ced9d9f1e40420dab2753e353908c5a618be5d",
+    "targetPath": "src/resources/prd/prd-01-login.md",
+    "filePath": ".axhub/make/comments/0f1989353499f6e438ddd38791ced9d9f1e40420dab2753e353908c5a618be5d.json"
+  },
+  "comments": [],
+  "images": [],
+  "documentPath": "src/resources/prd/prd-01-login.md"
+}

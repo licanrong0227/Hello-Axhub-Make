@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 3,
+  "kind": "prototype-edit-comments",
+  "resource": {
+    "id": "accounting-app",
+    "targetPath": "prototypes/accounting-app",
+    "filePath": ".axhub/make/comments/5520652f3a39caf8146def1d61cc4cd63ca0aa4a12d1b8c15a315925c58bc480.json"
+  },
+  "comments": [
+    {
+      "label": "div#__axhub_annotation_host__ >> div(\"原型目录记账模块登录页验证码页记账Tab主页普通记账页AI记账页账单编辑页统计模块我的模块\")",
+      "locator": {
+        "selectors": [
+          "[data-axhub-annotation-comment-target-id=\"directory-panel\"]",
+          ".axhub-play-client-global-panel",
+          "div:nth-of-type(2) > div > div > div > div:nth-of-type(2)"
+        ],
+        "fingerprint": "div|class=axhub-play-client-global-panel|text=原型目录记账模块登录页验证码页记账Tab主页普通记账页AI记账页",
+        "path": [
+          25,
+          0,
+          0,
+          0,
+          2
+        ],
+        "shadowHostChain": [
+          "#__axhub_annotation_host__"
+        ]
+      },
+      "marker": {
+        "clientX": 1819,
+        "clientY": 411,
+        "documentX": 1819,
+        "documentY": 411,
+        "xPercent": 95.13598326359832,
+        "y": 411,
+        "isFixed": true,
+        "offsetX": 147,
+        "offsetY": 411,
+        "dirtySince": 1789286235734
+      },
+      "id": "e2f05e7e-0cdb-4c92-ba05-19d40ee34be4",
+      "state": "idle",
+      "comment": "PRD文档没有汇总显示到原型目录的列表中",
+      "pageScope": "prototypes/accounting-app::page::login",
+      "provider": null,
+      "requestId": null,
+      "sessionId": null,
+      "updatedAt": null,
+      "message": null,
+      "code": null
+    },
+    {
+      "label": "div(\"记账本轻松记账，智能理财获取验证码或微信登录我已阅读并同意《用户协议》和《隐私协议》\")",
+      "locator": {
+        "selectors": [
+          ".app-container",
+          "body > div > div"
+        ],
+        "fingerprint": "div|class=app-container|text=记账本轻松记账，智能理财获取验证码或微信登录我已阅读并同意《用户",
+        "path": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      "marker": {
+        "clientX": 1116,
+        "clientY": 83,
+        "documentX": 1116,
+        "documentY": 83,
+        "xPercent": 58.36820083682008,
+        "y": 83,
+        "isFixed": false,
+        "offsetX": 375,
+        "offsetY": 83,
+        "dirtySince": 1789285322274
+      },
+      "id": "c08fc81d-947d-4137-98ef-5140729e127a",
+      "state": "idle",
+      "comment": "对当前项目生成完整的PRD文档",
+      "pageScope": "prototypes/accounting-app::page::login",
+      "provider": null,
+      "requestId": null,
+      "sessionId": null,
+      "updatedAt": null,
+      "message": null,
+      "code": null
+    }
+  ],
+  "images": []
+}
