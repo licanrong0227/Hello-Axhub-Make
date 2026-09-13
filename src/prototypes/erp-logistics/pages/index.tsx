@@ -168,7 +168,7 @@ function OutboundListPage({ onNavigate }: PageProps) {
           </button>
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="freight-calc" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left text-gray-500">
@@ -224,8 +224,8 @@ function OutboundDetailPage({ onNavigate }: PageProps) {
         <span className={`px-2 py-0.5 text-xs rounded-full ${statusColors[order.status]}`}>{order.status}</span>
       </div>
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
-          <h3 className="text-sm font-medium text-gray-900 mb-3">订单信息</h3>
+      <div data-annotation-id="overseas-warehouse" className="bg-white rounded-lg border border-gray-200 p-4">
+        <h3 className="text-sm font-medium text-gray-900 mb-3">订单信息</h3>
           <div className="grid grid-cols-2 gap-2 text-sm">
             <div><span className="text-gray-500">出库单号：</span><span className="text-gray-900">{order.id}</span></div>
             <div><span className="text-gray-500">关联订单：</span><span className="text-blue-600">{order.orderId}</span></div>
@@ -253,7 +253,7 @@ function OutboundDetailPage({ onNavigate }: PageProps) {
           </div>
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div data-annotation-id="deduct-stock" className="bg-white rounded-lg border border-gray-200 p-4">
         <h3 className="text-sm font-medium text-gray-900 mb-3">商品明细</h3>
         <table className="w-full text-sm">
           <thead>
@@ -600,7 +600,7 @@ function CustomsListPage({ onNavigate }: PageProps) {
           ))}
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="customs-auto" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left text-gray-500">

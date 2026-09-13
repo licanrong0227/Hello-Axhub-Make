@@ -10,6 +10,7 @@ import {
   Bell,
   User,
   Search,
+  Lock,
   LayoutDashboard,
   Package,
   Link as LinkIcon,
@@ -40,7 +41,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
-import PortalOverview from './pages';
+import LoginPage from './pages/login';
 import './style.css';
 
 // ── 菜单类型 ──────────────────────────────────────────────
@@ -53,11 +54,11 @@ type MenuItem = {
   link?: string;
 };
 
-// ── 路由：系统概览 + 跳转占位 ─────────────────────────────
+// ── 路由 ──────────────────────────────────────────────────
 
 const route = defineHashPageRoute(
-  [{ id: 'overview', title: '系统概览' }],
-  { defaultPageId: 'overview' }
+  [{ id: 'login', title: '登录' }, { id: 'go-dashboard', title: '工作台首页' }],
+  { defaultPageId: 'login' }
 );
 
 // ── 根据 key 查找菜单项（含父级路径） ────────────────────────
@@ -88,7 +89,7 @@ const menuItems: MenuItem[] = [
     label: '首页工作台',
     icon: LayoutDashboard,
     children: [
-      { key: 'go-dashboard', label: '工作台首页', link: '/prototypes/erp-dashboard/#page=home' },
+      { key: 'go-dashboard', label: '工作台首页', link: '../erp-dashboard/#page=home' },
     ],
   },
   {
@@ -96,12 +97,12 @@ const menuItems: MenuItem[] = [
     label: '商品中心',
     icon: Package,
     children: [
-      { key: 'go-product-list', label: '商品列表', link: '/prototypes/erp-products/#page=product-list' },
-      { key: 'go-collect-list', label: '采集任务', link: '/prototypes/erp-products/#page=collect-list' },
-      { key: 'go-publish-list', label: '刊登任务', link: '/prototypes/erp-products/#page=publish-list' },
-      { key: 'go-publish-fail', label: '刊登失败记录', link: '/prototypes/erp-products/#page=publish-fail' },
-      { key: 'go-platform-mapping', label: '多平台映射列表', link: '/prototypes/erp-products/#page=platform-mapping' },
-      { key: 'go-pricing-list', label: '定价规则', link: '/prototypes/erp-products/#page=pricing-list' },
+      { key: 'go-product-list', label: '商品列表', link: '../erp-products/#page=product-list' },
+      { key: 'go-collect-list', label: '采集任务', link: '../erp-products/#page=collect-list' },
+      { key: 'go-publish-list', label: '刊登任务', link: '../erp-products/#page=publish-list' },
+      { key: 'go-publish-fail', label: '刊登失败记录', link: '../erp-products/#page=publish-fail' },
+      { key: 'go-platform-mapping', label: '多平台映射列表', link: '../erp-products/#page=platform-mapping' },
+      { key: 'go-pricing-list', label: '定价规则', link: '../erp-products/#page=pricing-list' },
     ],
   },
   {
@@ -109,10 +110,10 @@ const menuItems: MenuItem[] = [
     label: '订单管理',
     icon: ShoppingCart,
     children: [
-      { key: 'go-order-list', label: '订单列表', link: '/prototypes/erp-orders/#page=order-list' },
-      { key: 'go-exception-list', label: '异常订单', link: '/prototypes/erp-orders/#page=exception-list' },
-      { key: 'go-merge-split', label: '合单拆单规则', link: '/prototypes/erp-orders/#page=merge-split-rule' },
-      { key: 'go-wave-list', label: '波次拣货列表', link: '/prototypes/erp-orders/#page=wave-list' },
+      { key: 'go-order-list', label: '订单列表', link: '../erp-orders/#page=order-list' },
+      { key: 'go-exception-list', label: '异常订单', link: '../erp-orders/#page=exception-list' },
+      { key: 'go-merge-split', label: '合单拆单规则', link: '../erp-orders/#page=merge-split-rule' },
+      { key: 'go-wave-list', label: '波次拣货列表', link: '../erp-orders/#page=wave-list' },
     ],
   },
   {
@@ -120,12 +121,12 @@ const menuItems: MenuItem[] = [
     label: '库存管理',
     icon: Warehouse,
     children: [
-      { key: 'go-inventory-overview', label: '库存总览', link: '/prototypes/erp-inventory/#page=inventory-overview' },
-      { key: 'go-inventory-list', label: '库存列表', link: '/prototypes/erp-inventory/#page=inventory-list' },
-      { key: 'go-stocktake-list', label: '盘点列表', link: '/prototypes/erp-inventory/#page=stocktake-list' },
-      { key: 'go-transfer-list', label: '调拨列表', link: '/prototypes/erp-inventory/#page=transfer-list' },
-      { key: 'go-warehouse-list', label: '仓库列表', link: '/prototypes/erp-inventory/#page=warehouse-list' },
-      { key: 'go-location-manage', label: '库位管理', link: '/prototypes/erp-inventory/#page=location-manage' },
+      { key: 'go-inventory-overview', label: '库存总览', link: '../erp-inventory/#page=inventory-overview' },
+      { key: 'go-inventory-list', label: '库存列表', link: '../erp-inventory/#page=inventory-list' },
+      { key: 'go-stocktake-list', label: '盘点列表', link: '../erp-inventory/#page=stocktake-list' },
+      { key: 'go-transfer-list', label: '调拨列表', link: '../erp-inventory/#page=transfer-list' },
+      { key: 'go-warehouse-list', label: '仓库列表', link: '../erp-inventory/#page=warehouse-list' },
+      { key: 'go-location-manage', label: '库位管理', link: '../erp-inventory/#page=location-manage' },
     ],
   },
   {
@@ -133,10 +134,10 @@ const menuItems: MenuItem[] = [
     label: '采购管理',
     icon: Truck,
     children: [
-      { key: 'go-supplier-list', label: '供应商列表', link: '/prototypes/erp-procurement/#page=supplier-list' },
-      { key: 'go-suggest-list', label: '采购建议', link: '/prototypes/erp-procurement/#page=suggest-list' },
-      { key: 'go-purchase-order-list', label: '采购订单', link: '/prototypes/erp-procurement/#page=order-list' },
-      { key: 'go-return-list', label: '采购退货', link: '/prototypes/erp-procurement/#page=return-list' },
+      { key: 'go-supplier-list', label: '供应商列表', link: '../erp-procurement/#page=supplier-list' },
+      { key: 'go-suggest-list', label: '采购建议', link: '../erp-procurement/#page=suggest-list' },
+      { key: 'go-purchase-order-list', label: '采购订单', link: '../erp-procurement/#page=order-list' },
+      { key: 'go-return-list', label: '采购退货', link: '../erp-procurement/#page=return-list' },
     ],
   },
   {
@@ -144,10 +145,10 @@ const menuItems: MenuItem[] = [
     label: '仓储与物流',
     icon: Send,
     children: [
-      { key: 'go-outbound-list', label: '销售出库', link: '/prototypes/erp-logistics/#page=outbound-list' },
-      { key: 'go-inbound-list', label: '采购入库', link: '/prototypes/erp-logistics/#page=inbound-list' },
-      { key: 'go-logistics-provider', label: '物流商列表', link: '/prototypes/erp-logistics/#page=logistics-provider' },
-      { key: 'go-customs-list', label: '报关列表', link: '/prototypes/erp-logistics/#page=customs-list' },
+      { key: 'go-outbound-list', label: '销售出库', link: '../erp-logistics/#page=outbound-list' },
+      { key: 'go-inbound-list', label: '采购入库', link: '../erp-logistics/#page=inbound-list' },
+      { key: 'go-logistics-provider', label: '物流商列表', link: '../erp-logistics/#page=logistics-provider' },
+      { key: 'go-customs-list', label: '报关列表', link: '../erp-logistics/#page=customs-list' },
     ],
   },
   {
@@ -155,11 +156,11 @@ const menuItems: MenuItem[] = [
     label: '财务管理',
     icon: DollarSign,
     children: [
-      { key: 'go-ar-list', label: '应收列表', link: '/prototypes/erp-finance/#page=ar-list' },
-      { key: 'go-ap-list', label: '应付列表', link: '/prototypes/erp-finance/#page=ap-list' },
-      { key: 'go-expense-list', label: '费用列表', link: '/prototypes/erp-finance/#page=expense-list' },
-      { key: 'go-exchange-rate-list', label: '汇率列表', link: '/prototypes/erp-finance/#page=exchange-rate-list' },
-      { key: 'go-reconciliation-list', label: '对账列表', link: '/prototypes/erp-finance/#page=reconciliation-list' },
+      { key: 'go-ar-list', label: '应收列表', link: '../erp-finance/#page=ar-list' },
+      { key: 'go-ap-list', label: '应付列表', link: '../erp-finance/#page=ap-list' },
+      { key: 'go-expense-list', label: '费用列表', link: '../erp-finance/#page=expense-list' },
+      { key: 'go-exchange-rate-list', label: '汇率列表', link: '../erp-finance/#page=exchange-rate-list' },
+      { key: 'go-reconciliation-list', label: '对账列表', link: '../erp-finance/#page=reconciliation-list' },
     ],
   },
   {
@@ -167,8 +168,8 @@ const menuItems: MenuItem[] = [
     label: '客户与售后',
     icon: Users,
     children: [
-      { key: 'go-customer-list', label: '客户列表', link: '/prototypes/erp-aftersales/#page=customer-list' },
-      { key: 'go-aftersale-list', label: '售后工单', link: '/prototypes/erp-aftersales/#page=aftersale-list' },
+      { key: 'go-customer-list', label: '客户列表', link: '../erp-aftersales/#page=customer-list' },
+      { key: 'go-aftersale-list', label: '售后工单', link: '../erp-aftersales/#page=aftersale-list' },
     ],
   },
   {
@@ -176,10 +177,10 @@ const menuItems: MenuItem[] = [
     label: '数据看板',
     icon: BarChart3,
     children: [
-      { key: 'go-report-overview', label: '经营概览', link: '/prototypes/erp-reports/#page=overview' },
-      { key: 'go-report-sales', label: '销售报表', link: '/prototypes/erp-reports/#page=sales' },
-      { key: 'go-report-inventory', label: '库存报表', link: '/prototypes/erp-reports/#page=inventory' },
-      { key: 'go-report-logistics', label: '物流报表', link: '/prototypes/erp-reports/#page=logistics' },
+      { key: 'go-report-overview', label: '经营概览', link: '../erp-reports/#page=overview' },
+      { key: 'go-report-sales', label: '销售报表', link: '../erp-reports/#page=sales' },
+      { key: 'go-report-inventory', label: '库存报表', link: '../erp-reports/#page=inventory' },
+      { key: 'go-report-logistics', label: '物流报表', link: '../erp-reports/#page=logistics' },
     ],
   },
   {
@@ -187,13 +188,13 @@ const menuItems: MenuItem[] = [
     label: '系统管理',
     icon: Settings,
     children: [
-      { key: 'go-user-list', label: '用户列表', link: '/prototypes/erp-system/#page=user-list' },
-      { key: 'go-role-manage', label: '角色管理', link: '/prototypes/erp-system/#page=role-manage' },
-      { key: 'go-shop-auth-list', label: '店铺授权列表', link: '/prototypes/erp-system/#page=shop-auth-list' },
-      { key: 'go-platform-mapping-list', label: '平台映射列表', link: '/prototypes/erp-system/#page=platform-mapping-list' },
-      { key: 'go-approval-flow-list', label: '审批流程列表', link: '/prototypes/erp-system/#page=approval-flow-list' },
-      { key: 'go-message-center', label: '消息中心', link: '/prototypes/erp-system/#page=message-center' },
-      { key: 'go-audit-log', label: '操作日志', link: '/prototypes/erp-system/#page=audit-log' },
+      { key: 'go-user-list', label: '用户列表', link: '../erp-system/#page=user-list' },
+      { key: 'go-role-manage', label: '角色管理', link: '../erp-system/#page=role-manage' },
+      { key: 'go-shop-auth-list', label: '店铺授权列表', link: '../erp-system/#page=shop-auth-list' },
+      { key: 'go-platform-mapping-list', label: '平台映射列表', link: '../erp-system/#page=platform-mapping-list' },
+      { key: 'go-approval-flow-list', label: '审批流程列表', link: '../erp-system/#page=approval-flow-list' },
+      { key: 'go-message-center', label: '消息中心', link: '../erp-system/#page=message-center' },
+      { key: 'go-audit-log', label: '操作日志', link: '../erp-system/#page=audit-log' },
     ],
   },
 ];
@@ -287,9 +288,24 @@ function SideMenu({
 
 export default function ErpPortal() {
   const { page, setPage } = useHashPage(route);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys, setOpenKeys] = useState<string[]>(['m-dashboard']);
-  const [activeIframeUrl, setActiveIframeUrl] = useState<string | null>(null);
+  const [activeIframeUrl, setActiveIframeUrl] = useState<string | null>(
+    '../erp-dashboard/#page=home'
+  );
+  const [showAvatarMenu, setShowAvatarMenu] = useState(false);
+  const [showChangePassword, setShowChangePassword] = useState(false);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [passwordStep, setPasswordStep] = useState(1);
+  const [oldPassword, setOldPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleLogin = useCallback(() => {
+    setIsLoggedIn(true);
+    setPage('go-dashboard');
+  }, [setPage]);
 
   const activeMenuInfo = useMemo(
     () => (activeIframeUrl && page ? findMenuItem(menuItems, page) : null),
@@ -306,10 +322,33 @@ export default function ErpPortal() {
     setActiveIframeUrl(link);
   }, []);
 
-  const handleBackToOverview = useCallback(() => {
-    setActiveIframeUrl(null);
-    setPage('overview');
+  const handleLogout = useCallback(() => {
+    setShowLogoutConfirm(false);
+    setIsLoggedIn(false);
+    setPage('login');
   }, [setPage]);
+
+  const handleChangePassword = useCallback(() => {
+    setShowChangePassword(true);
+    setShowAvatarMenu(false);
+    setPasswordStep(1);
+    setOldPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
+  }, []);
+
+  const handlePasswordNext = useCallback(() => {
+    setPasswordStep(2);
+  }, []);
+
+  const handlePasswordSubmit = useCallback(() => {
+    setShowChangePassword(false);
+    setPasswordStep(1);
+  }, []);
+
+  if (!isLoggedIn || page === 'login') {
+    return <LoginPage onLogin={handleLogin} />;
+  }
 
   const sidebarWidth = collapsed ? 64 : 240;
 
@@ -369,44 +408,171 @@ export default function ErpPortal() {
               </span>
             </button>
             <div className="w-px h-6 bg-gray-200" />
-            <button className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-50">
-              <div className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center">
-                <User size={14} className="text-white" />
-              </div>
-              <span className="text-sm text-gray-700">管理员</span>
-            </button>
+            <div className="relative">
+              <button
+                className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-50"
+                onMouseEnter={() => setShowAvatarMenu(true)}
+                onMouseLeave={() => setShowAvatarMenu(false)}
+              >
+                <div className="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center">
+                  <User size={14} className="text-white" />
+                </div>
+                <span className="text-sm text-gray-700">管理员</span>
+              </button>
+              {showAvatarMenu && (
+                <div
+                  className="absolute right-0 top-full mt-1 w-40 bg-white border border-gray-200 rounded-lg shadow-lg py-1 z-50"
+                  onMouseEnter={() => setShowAvatarMenu(true)}
+                  onMouseLeave={() => setShowAvatarMenu(false)}
+                >
+                  <button
+                    onClick={handleChangePassword}
+                    className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                  >
+                    修改密码
+                  </button>
+                  <button
+                    onClick={() => { setShowLogoutConfirm(true); setShowAvatarMenu(false); }}
+                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+                  >
+                    退出登录
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
         {/* Content */}
         <main className="flex-1 overflow-hidden">
-          {activeIframeUrl ? (
-            <div className="h-full flex flex-col">
-              <div className="h-9 bg-gray-50 border-b border-gray-200 flex items-center px-4 gap-2 flex-shrink-0">
-                <button
-                  onClick={handleBackToOverview}
-                  className="text-xs text-blue-600 hover:underline"
-                >
-                  系统概览
-                </button>
-                <ChevronRight size={12} className="text-gray-400" />
-                <span className="text-xs text-gray-700 truncate">
-                  {activeMenuInfo?.breadcrumb ?? ''}
-                </span>
-              </div>
+          <div className="h-full flex flex-col">
+            <div className="h-9 bg-gray-50 border-b border-gray-200 flex items-center px-4 gap-2 flex-shrink-0">
+              <span className="text-xs text-gray-700 truncate">
+                {activeMenuInfo?.breadcrumb ?? '工作台首页'}
+              </span>
+            </div>
+            {activeIframeUrl && (
               <iframe
                 src={activeIframeUrl}
                 className="flex-1 w-full border-0"
                 title={activeMenuInfo?.label ?? ''}
               />
-            </div>
-          ) : (
-            <div className="h-full overflow-auto p-4">
-              <PortalOverview />
-            </div>
-          )}
+            )}
+          </div>
         </main>
       </div>
+
+      {/* 修改密码弹窗 */}
+      {showChangePassword && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md mx-4">
+            <div className="px-6 py-4 border-b border-gray-100">
+              <h3 className="text-base font-semibold text-gray-900">修改密码</h3>
+            </div>
+            {/* 步骤条 */}
+            <div className="px-6 pt-5">
+              <div className="flex items-center gap-3">
+                <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-medium ${passwordStep >= 1 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-500'}`}>1</div>
+                <span className={`text-sm ${passwordStep >= 1 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>验证旧密码</span>
+                <div className={`flex-1 h-px ${passwordStep >= 2 ? 'bg-blue-500' : 'bg-gray-200'}`} />
+                <div className={`flex items-center justify-center w-7 h-7 rounded-full text-xs font-medium ${passwordStep >= 2 ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-500'}`}>2</div>
+                <span className={`text-sm ${passwordStep >= 2 ? 'text-blue-600 font-medium' : 'text-gray-500'}`}>设置新密码</span>
+              </div>
+            </div>
+            {/* 内容 */}
+            <div className="px-6 py-5">
+              {passwordStep === 1 ? (
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1.5">旧密码</label>
+                  <input
+                    type="password"
+                    value={oldPassword}
+                    onChange={(e) => setOldPassword(e.target.value)}
+                    placeholder="请输入旧密码"
+                    className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              ) : (
+                <div className="space-y-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">新密码</label>
+                    <input
+                      type="password"
+                      value={newPassword}
+                      onChange={(e) => setNewPassword(e.target.value)}
+                      placeholder="请输入新密码"
+                      className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">确认新密码</label>
+                    <input
+                      type="password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      placeholder="请再次输入新密码"
+                      className="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* 按钮 */}
+            <div className="px-6 py-4 border-t border-gray-100 flex justify-end gap-3">
+              <button
+                onClick={() => setShowChangePassword(false)}
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                取消
+              </button>
+              {passwordStep === 1 ? (
+                <button
+                  onClick={handlePasswordNext}
+                  className="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                  下一步
+                </button>
+              ) : (
+                <button
+                  onClick={handlePasswordSubmit}
+                  className="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                >
+                  确认修改
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 退出登录确认 */}
+      {showLogoutConfirm && (
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-sm mx-4">
+            <div className="px-6 py-5 text-center">
+              <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-4">
+                <User size={24} className="text-red-500" />
+              </div>
+              <h3 className="text-base font-semibold text-gray-900 mb-1">确认退出登录？</h3>
+              <p className="text-sm text-gray-500">退出后需要重新登录才能使用系统</p>
+            </div>
+            <div className="px-6 py-4 border-t border-gray-100 flex justify-center gap-3">
+              <button
+                onClick={() => setShowLogoutConfirm(false)}
+                className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+              >
+                取消
+              </button>
+              <button
+                onClick={handleLogout}
+                className="px-4 py-2 text-sm bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+              >
+                确认退出
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

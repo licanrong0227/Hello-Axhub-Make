@@ -1,0 +1,142 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-system",
+    "pageId": "user-list",
+    "updatedAt": 1779496800000,
+    "nodes": [
+      {
+        "id": "perm-level",
+        "index": 1,
+        "title": "权限两级控制",
+        "pageId": ["role-manage", "permission-config"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"perm-level\"]"],
+          "fingerprint": "div|data-annotation-id=perm-level",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "权限两级控制：操作权限（模块查看/编辑/删除/审核）+ 数据权限（可访问平台/站点/店铺/仓库范围）。角色配置页面中，左侧勾选操作权限矩阵，下方选择数据范围；超管角色跳过所有权限校验。",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1779496800000,
+        "updatedAt": 1779496800000
+      },
+      {
+        "id": "approval-countersign",
+        "index": 2,
+        "title": "会签审批",
+        "pageId": ["approval-flow-config"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"approval-countersign\"]"],
+          "fingerprint": "div|data-annotation-id=approval-countersign",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "同一节点多人审批采用会签制，全部通过才进入下一节点；或签制则任一人通过即流转。审批流程配置页面的「签审模式」下拉切换两种模式。",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1779496800000,
+        "updatedAt": 1779496800000
+      },
+      {
+        "id": "encoding-reset",
+        "index": 3,
+        "title": "编码流水号重置",
+        "pageId": ["code-rule"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"encoding-reset\"]"],
+          "fingerprint": "div|data-annotation-id=encoding-reset",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "流水号按日重置，每日从0001开始递增；历史单据编码不受规则变更影响，修改前缀、日期格式或流水号位数后仅对新单据生效。",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1779496800000,
+        "updatedAt": 1779496800000
+      },
+      {
+        "id": "auth-expire",
+        "index": 4,
+        "title": "授权到期提醒",
+        "pageId": ["shop-auth-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"auth-expire\"]"],
+          "fingerprint": "div|data-annotation-id=auth-expire",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "授权到期时间 <7天显示橙色，<3天显示红色，到期后需手动重新授权。剩余天数列通过 getExpiryColor 函数动态着色，已过期的授权状态标记为「已过期」。",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1779496800000,
+        "updatedAt": 1779496800000
+      },
+      {
+        "id": "super-admin",
+        "index": 5,
+        "title": "超管保护",
+        "pageId": ["user-list", "role-manage"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"super-admin\"]"],
+          "fingerprint": "div|data-annotation-id=super-admin",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "超管角色拥有全部权限，不可修改、不可禁用、不可删除。用户列表中超级管理员行的编辑、停用、删除操作均禁用；角色管理中超管角色不可移除。",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1779496800000,
+        "updatedAt": 1779496800000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "system-pages",
+        "title": "系统管理",
+        "defaultExpanded": true,
+        "children": [
+          { "type": "route", "id": "route-user-list", "title": "用户列表", "route": "user-list" },
+          { "type": "route", "id": "route-role-manage", "title": "角色管理", "route": "role-manage" },
+          { "type": "route", "id": "route-permission-config", "title": "权限配置", "route": "permission-config" },
+          { "type": "route", "id": "route-shop-auth-list", "title": "授权列表", "route": "shop-auth-list" },
+          { "type": "route", "id": "route-platform-mapping-list", "title": "映射列表", "route": "platform-mapping-list" },
+          { "type": "route", "id": "route-approval-flow-list", "title": "审批流程", "route": "approval-flow-list" },
+          { "type": "route", "id": "route-code-rule", "title": "编码规则", "route": "code-rule" },
+          { "type": "route", "id": "route-message-center", "title": "消息中心", "route": "message-center" },
+          { "type": "route", "id": "route-audit-log", "title": "操作日志", "route": "audit-log" }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-system",
+            "title": "系统管理PRD",
+            "markdownPath": "docs/prd-11-system.md"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -123,7 +123,7 @@ export function UserListPage({ onNavigate }: { onNavigate: (page: string) => voi
   const [searchText, setSearchText] = useState('');
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-annotation-id="super-admin">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">用户列表</h2>
         <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">
@@ -229,7 +229,7 @@ export function RoleManagePage({ onNavigate }: { onNavigate: (page: string) => v
   ];
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-annotation-id="perm-level">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">角色管理</h2>
         <button className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">
@@ -377,7 +377,7 @@ export function ShopAuthListPage({ onNavigate }: { onNavigate: (page: string) =>
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-annotation-id="auth-expire">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">店铺授权列表</h2>
         <button
@@ -762,7 +762,7 @@ export function ApprovalFlowConfigPage({ onNavigate }: { onNavigate: (page: stri
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-annotation-id="approval-countersign">
       <div className="flex items-center gap-2">
         <button onClick={() => onNavigate('approval-flow-list')} className="p-1 rounded hover:bg-gray-100">
           <ArrowLeft size={18} className="text-gray-600" />
@@ -890,7 +890,7 @@ export function CodeRulePage({ onNavigate }: { onNavigate: (page: string) => voi
   const preview = `${prefix}-${dateFormat === 'yyyyMMdd' ? '20260913' : dateFormat === 'yyMMdd' ? '260913' : '2026-09-13'}-${serial.padStart(Number(serialLength), '0')}`;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4" data-annotation-id="encoding-reset">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">编码规则配置</h2>
       </div>

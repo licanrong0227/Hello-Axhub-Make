@@ -132,7 +132,7 @@ export function InventoryOverviewPage({ onNavigate }: { onNavigate: (page: strin
       <h2 className="text-lg font-semibold text-gray-900">库存总览</h2>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-4 gap-4">
+      <div data-annotation-id="stock-formula" className="grid grid-cols-4 gap-4">
         {[
           { label: '总库存', value: inventoryStats.totalInventory.toLocaleString(), icon: Package, color: 'text-blue-600', bg: 'bg-blue-50' },
           { label: '可售库存', value: inventoryStats.sellableInventory.toLocaleString(), icon: CheckCircle2, color: 'text-green-600', bg: 'bg-green-50' },
@@ -306,8 +306,7 @@ export function InventoryListPage({ onNavigate }: { onNavigate: (page: string) =
         </div>
       </div>
 
-      {/* Table */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="safety-stock" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left">
@@ -416,8 +415,7 @@ export function InventoryDetailPage({ onNavigate }: { onNavigate: (page: string)
         ))}
       </div>
 
-      {/* Warehouse Distribution */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="fifo-pick" className="bg-white rounded-lg border border-gray-200">
         <div className="px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">仓库/库位分布</h3>
         </div>
@@ -707,8 +705,7 @@ export function StocktakeDetailPage({ onNavigate }: { onNavigate: (page: string)
         <span className={`px-2 py-0.5 text-xs rounded ${statusColors[order.status]}`}>{order.status}</span>
       </div>
 
-      {/* Order Info */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div data-annotation-id="static-lock" className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="grid grid-cols-4 gap-4">
           <div>
             <p className="text-xs text-gray-500">盘点单号</p>
@@ -745,8 +742,7 @@ export function StocktakeDetailPage({ onNavigate }: { onNavigate: (page: string)
         </div>
       </div>
 
-      {/* Detail Items */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="dynamic-lock" className="bg-white rounded-lg border border-gray-200">
         <div className="px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">盘点明细</h3>
         </div>
@@ -1169,8 +1165,7 @@ export function WarehouseListPage({ onNavigate }: { onNavigate: (page: string) =
         </div>
       </div>
 
-      {/* Virtual Warehouses */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="virtual-warehouse" className="bg-white rounded-lg border border-gray-200">
         <div className="px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">系统预置虚拟仓</h3>
           <p className="text-xs text-gray-500 mt-0.5">虚拟仓库由系统自动管理，不可直接操作库存</p>

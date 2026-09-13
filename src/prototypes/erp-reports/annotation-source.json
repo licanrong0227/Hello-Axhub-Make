@@ -1,0 +1,138 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-reports",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "data-scope",
+        "index": 1,
+        "title": "数据权限范围",
+        "pageId": ["overview", "sales", "inventory", "logistics"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"data-scope\"]"],
+          "fingerprint": "div|data-annotation-id=data-scope",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "超管账号可查看全量数据，普通用户仅可查看权限范围内的数据",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "yoy-mom",
+        "index": 2,
+        "title": "同比环比",
+        "pageId": ["overview", "sales"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"yoy-mom\"]"],
+          "fingerprint": "div|data-annotation-id=yoy-mom",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "核心指标支持同比、环比计算",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "drill-down",
+        "index": 3,
+        "title": "钻取查询",
+        "pageId": ["sales", "inventory"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"drill-down\"]"],
+          "fingerprint": "div|data-annotation-id=drill-down",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "支持按维度钻取，点击数据可查看下一级明细",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "export",
+        "index": 4,
+        "title": "数据导出",
+        "pageId": ["overview", "sales", "inventory", "logistics"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"export\"]"],
+          "fingerprint": "div|data-annotation-id=export",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "支持数据导出Excel格式",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "report-pages",
+        "title": "数据看板",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-overview",
+            "title": "经营概览",
+            "route": "overview"
+          },
+          {
+            "type": "route",
+            "id": "route-sales",
+            "title": "销售报表",
+            "route": "sales"
+          },
+          {
+            "type": "route",
+            "id": "route-inventory",
+            "title": "库存报表",
+            "route": "inventory"
+          },
+          {
+            "type": "route",
+            "id": "route-logistics",
+            "title": "物流报表",
+            "route": "logistics"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-reports",
+            "title": "数据看板PRD",
+            "markdownPath": "docs/prd-10-reports.md"
+          }
+        ]
+      }
+    ]
+  }
+}

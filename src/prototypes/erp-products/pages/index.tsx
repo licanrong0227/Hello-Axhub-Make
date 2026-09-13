@@ -87,7 +87,7 @@ export function ProductListPage({ onNavigate }: { onNavigate: (page: string) => 
       </div>
 
       {/* 查询区 */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div data-annotation-id="diff-compare" className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="grid grid-cols-4 gap-3">
           <input
             type="text"
@@ -151,7 +151,7 @@ export function ProductListPage({ onNavigate }: { onNavigate: (page: string) => 
       )}
 
       {/* 列表 */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="inventory-sync" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left">
@@ -271,7 +271,7 @@ export function ProductAddPage({ onNavigate }: { onNavigate: (page: string) => v
           ))}
         </div>
 
-        <div className="p-6">
+        <div className="p-6" data-annotation-id="sku-unique">
           {activeTab === 'base' && (
             <div className="max-w-2xl space-y-4">
               <div>
@@ -535,7 +535,7 @@ export function CollectTaskAddPage({ onNavigate }: { onNavigate: (page: string) 
             </label>
           </div>
         </div>
-        <div>
+        <div data-annotation-id="collect-limit">
           <label className="block text-sm font-medium text-gray-700 mb-1">商品链接 <span className="text-red-500">*</span></label>
           <textarea
             rows={mode === 'single' ? 2 : 6}
@@ -621,7 +621,7 @@ export function PublishTaskAddPage({ onNavigate }: { onNavigate: (page: string) 
         </button>
         <h2 className="text-lg font-semibold text-gray-900">新建刊登任务</h2>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6 max-w-2xl space-y-4">
+      <div data-annotation-id="publish-retry" className="bg-white rounded-lg border border-gray-200 p-6 max-w-2xl space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">目标平台 <span className="text-red-500">*</span></label>
           <select className="w-full px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500">
@@ -813,7 +813,7 @@ export function PricingRuleAddPage({ onNavigate }: { onNavigate: (page: string) 
           <label className="block text-sm font-medium text-gray-700 mb-1">规则名称 <span className="text-red-500">*</span></label>
           <input type="text" placeholder="请输入规则名称" className="w-full px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500" />
         </div>
-        <div>
+        <div data-annotation-id="pricing-priority">
           <label className="block text-sm font-medium text-gray-700 mb-1">适用维度 <span className="text-red-500">*</span></label>
           <div className="flex gap-3">
             <label className="flex items-center gap-2 text-sm"><input type="radio" name="dim" defaultChecked /> 平台</label>

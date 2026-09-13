@@ -1,0 +1,192 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-orders",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "auto-review",
+        "index": 1,
+        "title": "自动审核",
+        "pageId": ["order-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"auto-review\"]"],
+          "fingerprint": "div|data-annotation-id=auto-review",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "系统自动审核订单，校验地址、支付状态、库存三项，审核通过进入待发货，不通过进入异常订单池",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "prestock-lock",
+        "index": 2,
+        "title": "预占库存",
+        "pageId": ["order-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"prestock-lock\"]"],
+          "fingerprint": "div|data-annotation-id=prestock-lock",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "订单同步成功后预占可售库存，取消/超时未付款自动释放",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "warehouse-match",
+        "index": 3,
+        "title": "发货仓分配",
+        "pageId": ["order-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"warehouse-match\"]"],
+          "fingerprint": "div|data-annotation-id=warehouse-match",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按收货地址与仓库地理距离就近匹配，支持人工指定",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "presale-manual",
+        "index": 4,
+        "title": "预售手动发货",
+        "pageId": ["order-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"presale-manual\"]"],
+          "fingerprint": "div|data-annotation-id=presale-manual",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "预售订单支付完成后预占库存，到货后需人工手动触发发货",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "merge-split-rule",
+        "index": 5,
+        "title": "合单拆单规则",
+        "pageId": ["merge-split-rule"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"merge-split-rule\"]"],
+          "fingerprint": "div|data-annotation-id=merge-split-rule",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "单条件/多条件同时生效模式，规则保存后立即生效",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "wave-rule",
+        "index": 6,
+        "title": "波次拣货规则",
+        "pageId": ["wave-rule"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"wave-rule\"]"],
+          "fingerprint": "div|data-annotation-id=wave-rule",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按仓库独立配置，满足任一触发规则自动生成波次",
+        "hasMarkdown": false,
+        "color": "#EF4444",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "order-pages",
+        "title": "订单管理",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-order-list",
+            "title": "订单列表",
+            "route": "order-list"
+          },
+          {
+            "type": "route",
+            "id": "route-order-detail",
+            "title": "订单详情",
+            "route": "order-detail"
+          },
+          {
+            "type": "route",
+            "id": "route-exception-list",
+            "title": "异常订单",
+            "route": "exception-list"
+          },
+          {
+            "type": "route",
+            "id": "route-exception-handle",
+            "title": "异常处理",
+            "route": "exception-handle"
+          },
+          {
+            "type": "route",
+            "id": "route-merge-split-rule",
+            "title": "合单拆单规则",
+            "route": "merge-split-rule"
+          },
+          {
+            "type": "route",
+            "id": "route-wave-list",
+            "title": "波次列表",
+            "route": "wave-list"
+          },
+          {
+            "type": "route",
+            "id": "route-wave-rule",
+            "title": "波次规则配置",
+            "route": "wave-rule"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-orders",
+            "title": "订单管理PRD",
+            "markdownPath": "docs/prd-04-orders.md"
+          }
+        ]
+      }
+    ]
+  }
+}

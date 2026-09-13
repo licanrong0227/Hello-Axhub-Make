@@ -29,6 +29,8 @@ import {
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import './style.css';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 
 const route = defineHashPageRoute(
   [{ id: 'home', title: '工作台' }],
@@ -107,7 +109,7 @@ function DashboardPage() {
   return (
     <div className="space-y-4">
       {/* 核心指标 */}
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4" data-annotation-id="metrics-cards">
         {metrics.map((m) => {
           const Icon = m.icon;
           return (
@@ -159,7 +161,7 @@ function DashboardPage() {
         </div>
 
         {/* 快捷入口 */}
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
+        <div className="bg-white rounded-lg border border-gray-200 p-4" data-annotation-id="quick-entry">
           <h3 className="text-sm font-medium text-gray-900 mb-3">快捷入口</h3>
           <div className="grid grid-cols-3 gap-2">
             {quickLinks.map((link) => {
@@ -182,7 +184,7 @@ function DashboardPage() {
 
       <div className="grid grid-cols-3 gap-4">
         {/* 待办事项 & 提醒 */}
-        <div className="col-span-2 bg-white rounded-lg border border-gray-200">
+        <div className="col-span-2 bg-white rounded-lg border border-gray-200" data-annotation-id="todo-section">
           <div className="flex border-b border-gray-100">
             <button
               onClick={() => setSelectedTab('todo')}
@@ -207,7 +209,7 @@ function DashboardPage() {
               <span className="ml-1.5 px-1.5 py-0.5 text-xs bg-orange-100 text-orange-600 rounded-full">4</span>
             </button>
           </div>
-          <div className="p-3">
+          <div className="p-3" data-annotation-id="reminder-section">
             {selectedTab === 'todo' ? (
               <div className="space-y-2">
                 {todoItems.map((item) => (
@@ -249,7 +251,7 @@ function DashboardPage() {
         </div>
 
         {/* 最近订单 */}
-        <div className="bg-white rounded-lg border border-gray-200 p-4">
+        <div className="bg-white rounded-lg border border-gray-200 p-4" data-annotation-id="recent-orders">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-medium text-gray-900">最近订单</h3>
             <button className="text-xs text-blue-600 hover:text-blue-700">查看全部</button>
@@ -280,12 +282,23 @@ export default function DashboardApp() {
   const { page, setPage } = useHashPage(route);
 
   return (
-    <ErpShell
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <DashboardPage />
-    </ErpShell>
+    <>
+      <ErpShell
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <DashboardPage />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }

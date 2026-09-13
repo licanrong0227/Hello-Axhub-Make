@@ -1,77 +1,71 @@
 {
   "version": 1,
-  "updatedAt": "2026-09-13T16:23:11.216Z",
+  "updatedAt": "2026-09-13T17:15:56.526Z",
   "prototypes": [
     {
-      "id": "item-prototypes-erp-portal",
+      "id": "item:prototypes:erp-portal",
       "kind": "item",
-      "title": "erp portal",
+      "title": "跨境ERP - 系统门户",
       "itemKey": "prototypes/erp-portal"
     },
     {
-      "id": "item-prototypes-erp-system",
+      "id": "item:prototypes:erp-aftersales",
       "kind": "item",
-      "title": "erp system",
-      "itemKey": "prototypes/erp-system"
-    },
-    {
-      "id": "item-prototypes-erp-aftersales",
-      "kind": "item",
-      "title": "erp aftersales",
+      "title": "跨境ERP - 客户与售后",
       "itemKey": "prototypes/erp-aftersales"
     },
     {
-      "id": "item-prototypes-erp-finance",
+      "id": "item:prototypes:erp-finance",
       "kind": "item",
-      "title": "erp finance",
+      "title": "跨境ERP - 财务管理",
       "itemKey": "prototypes/erp-finance"
     },
     {
-      "id": "item-prototypes-erp-logistics",
+      "id": "item:prototypes:erp-logistics",
       "kind": "item",
-      "title": "erp logistics",
+      "title": "跨境ERP - 仓储与物流",
       "itemKey": "prototypes/erp-logistics"
     },
     {
-      "id": "item-prototypes-erp-reports",
+      "id": "item:prototypes:erp-reports",
       "kind": "item",
-      "title": "erp reports",
+      "title": "跨境ERP - 数据看板",
       "itemKey": "prototypes/erp-reports"
     },
     {
-      "id": "item-prototypes-erp-inventory",
+      "id": "item:prototypes:erp-inventory",
       "kind": "item",
-      "title": "erp inventory",
+      "title": "跨境ERP - 库存管理",
       "itemKey": "prototypes/erp-inventory"
     },
     {
-      "id": "item-prototypes-erp-procurement",
+      "id": "item:prototypes:erp-procurement",
       "kind": "item",
-      "title": "erp procurement",
+      "title": "跨境ERP - 采购管理",
       "itemKey": "prototypes/erp-procurement"
     },
     {
-      "id": "item-prototypes-erp-dashboard",
+      "id": "item:prototypes:erp-dashboard",
       "kind": "item",
-      "title": "erp dashboard",
+      "title": "跨境ERP - 工作台",
       "itemKey": "prototypes/erp-dashboard"
     },
     {
-      "id": "item-prototypes-erp-orders",
+      "id": "item:prototypes:erp-orders",
       "kind": "item",
-      "title": "erp orders",
+      "title": "跨境ERP - 订单管理",
       "itemKey": "prototypes/erp-orders"
     },
     {
-      "id": "item-prototypes-erp-products",
+      "id": "item:prototypes:erp-products",
       "kind": "item",
-      "title": "erp products",
+      "title": "跨境ERP - 商品中心",
       "itemKey": "prototypes/erp-products"
     },
     {
-      "id": "item-prototypes-accounting-app",
+      "id": "item:prototypes:accounting-app",
       "kind": "item",
-      "title": "accounting app",
+      "title": "记账APP",
       "itemKey": "prototypes/accounting-app"
     },
     {
@@ -91,6 +85,12 @@
       "kind": "item",
       "title": "批注演示",
       "itemKey": "prototypes/touch-and-talk-annotation-demo"
+    },
+    {
+      "id": "item:prototypes:erp-system",
+      "kind": "item",
+      "title": "跨境ERP - 系统管理",
+      "itemKey": "prototypes/erp-system"
     }
   ],
   "docs": [],

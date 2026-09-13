@@ -183,7 +183,7 @@ export function ARListPage({ onNavigate }: { onNavigate: (page: string) => void 
         </select>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div data-annotation-id="ar-generate" className="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
@@ -240,7 +240,7 @@ export function ARWriteoffPage({ onNavigate }: { onNavigate: (page: string) => v
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl border border-gray-200 p-4 space-y-3">
+        <div data-annotation-id="writeoff-priority" className="bg-white rounded-xl border border-gray-200 p-4 space-y-3">
           <h3 className="font-medium text-gray-900">选择应收单</h3>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -756,7 +756,7 @@ export function ExchangeRateConfigPage({ onNavigate }: { onNavigate: (page: stri
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl space-y-6">
-        <div>
+        <div data-annotation-id="exchange-auto">
           <h3 className="font-medium text-gray-900 mb-3">自动同步</h3>
           <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
             <div>
@@ -848,7 +848,7 @@ export function CostCalcConfigPage({ onNavigate }: { onNavigate: (page: string) 
       </div>
 
       <div className="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl space-y-6">
-        <div>
+        <div data-annotation-id="cost-method">
           <h3 className="font-medium text-gray-900 mb-3">计价方式</h3>
           <div className="space-y-2">
             {[
@@ -1058,7 +1058,7 @@ export function ReconciliationDetailPage({ onNavigate }: { onNavigate: (page: st
         </div>
       </div>
 
-      <div className="bg-white rounded-xl border border-gray-200 p-4">
+      <div data-annotation-id="reconcile-diff" className="bg-white rounded-xl border border-gray-200 p-4">
         <h3 className="font-medium text-gray-900 mb-3">差异分析</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {[

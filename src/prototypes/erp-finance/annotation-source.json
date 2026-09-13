@@ -1,0 +1,144 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-finance",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "ar-generate",
+        "index": 1,
+        "title": "应收生成规则",
+        "pageId": ["ar-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"ar-generate\"]"],
+          "fingerprint": "div|data-annotation-id=ar-generate",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按平台结算单生成应收账款，而非发货时生成",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "writeoff-priority",
+        "index": 2,
+        "title": "核销优先级",
+        "pageId": ["ar-writeoff"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"writeoff-priority\"]"],
+          "fingerprint": "div|data-annotation-id=writeoff-priority",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "一笔平台回款核销多笔应收订单，按时间顺序优先核销最早应收",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "cost-method",
+        "index": 3,
+        "title": "成本计价方式",
+        "pageId": ["cost-calc-config"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"cost-method\"]"],
+          "fingerprint": "div|data-annotation-id=cost-method",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "移动加权平均法/固定成本法，切换仅影响后续计算，历史数据不追溯",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "exchange-auto",
+        "index": 4,
+        "title": "汇率自动同步",
+        "pageId": ["exchange-rate-config"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"exchange-auto\"]"],
+          "fingerprint": "div|data-annotation-id=exchange-auto",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按配置周期自动同步实时汇率，每次同步新增一条记录",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "reconcile-diff",
+        "index": 5,
+        "title": "对账差异",
+        "pageId": ["reconciliation-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"reconcile-diff\"]"],
+          "fingerprint": "div|data-annotation-id=reconcile-diff",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "平台金额与系统金额不一致时标红提醒，支持手工调整差异",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "finance-pages",
+        "title": "财务管理",
+        "defaultExpanded": true,
+        "children": [
+          { "type": "route", "id": "route-ar-list", "title": "应收列表", "route": "ar-list" },
+          { "type": "route", "id": "route-ar-writeoff", "title": "应收核销", "route": "ar-writeoff" },
+          { "type": "route", "id": "route-ap-list", "title": "应付列表", "route": "ap-list" },
+          { "type": "route", "id": "route-ap-writeoff", "title": "应付核销", "route": "ap-writeoff" },
+          { "type": "route", "id": "route-expense-list", "title": "费用列表", "route": "expense-list" },
+          { "type": "route", "id": "route-expense-add", "title": "新增费用", "route": "expense-add" },
+          { "type": "route", "id": "route-expense-rule", "title": "分摊规则", "route": "expense-rule" },
+          { "type": "route", "id": "route-exchange-rate-list", "title": "汇率列表", "route": "exchange-rate-list" },
+          { "type": "route", "id": "route-exchange-rate-config", "title": "汇率配置", "route": "exchange-rate-config" },
+          { "type": "route", "id": "route-cost-calc-config", "title": "成本核算配置", "route": "cost-calc-config" },
+          { "type": "route", "id": "route-reconciliation-list", "title": "对账列表", "route": "reconciliation-list" },
+          { "type": "route", "id": "route-reconciliation-detail", "title": "对账详情", "route": "reconciliation-detail" }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-finance",
+            "title": "财务管理PRD",
+            "markdownPath": "docs/prd-08-finance.md"
+          }
+        ]
+      }
+    ]
+  }
+}

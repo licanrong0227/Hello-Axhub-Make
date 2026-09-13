@@ -13,6 +13,8 @@ import {
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import './style.css';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import {
   SupplierListPage,
   SupplierAddPage,
@@ -86,13 +88,24 @@ export default function ProcurementApp() {
   const PageComponent = pageComponents[page] || SupplierListPage;
 
   return (
-    <ErpShell
-      title="采购管理"
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <PageComponent onNavigate={setPage} />
-    </ErpShell>
+    <>
+      <ErpShell
+        title="采购管理"
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <PageComponent onNavigate={setPage} />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }

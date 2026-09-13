@@ -2,7 +2,7 @@
  * @name 跨境ERP - 系统管理
  */
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   Shield,
   Users,
@@ -15,6 +15,9 @@ import {
   FileText,
   MessageSquare,
 } from 'lucide-react';
+import { AnnotationViewer } from '@axhub/annotation';
+import type { AnnotationDirectoryRouteNode, AnnotationSourceDocument, AnnotationViewerOptions } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import './style.css';
@@ -116,6 +119,18 @@ export default function ErpSystemApp() {
   const { page, setPage } = useHashPage(route);
   const PageComponent = pageComponents[page] || UserListPage;
 
+  const annotationOptions = useMemo<AnnotationViewerOptions>(() => ({
+    showToolbar: true,
+    showThemeToggle: true,
+    showColorFilter: true,
+    emptyWhenNoData: false,
+    toolbarEdge: 'right',
+    currentPageId: page,
+    onDirectoryRoute: (node: AnnotationDirectoryRouteNode) => {
+      if (typeof node.route === 'string') setPage(node.route);
+    },
+  }), [page, setPage]);
+
   return (
     <ErpShell
       title="跨境ERP - 系统管理"
@@ -124,6 +139,10 @@ export default function ErpSystemApp() {
       onMenuSelect={setPage}
     >
       <PageComponent onNavigate={setPage} />
+      <AnnotationViewer
+        source={annotationSourceDocument as AnnotationSourceDocument}
+        options={annotationOptions}
+      />
     </ErpShell>
   );
 }

@@ -1,0 +1,204 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-products",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "inventory-sync",
+        "index": 1,
+        "title": "库存同步机制",
+        "pageId": ["product-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"inventory-sync\"]"],
+          "fingerprint": "div|data-annotation-id=inventory-sync",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "ERP强覆盖机制：同步前拉取平台库存对比，发现平台修改库存留存差异记录并提醒",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "collect-limit",
+        "index": 2,
+        "title": "采集限制",
+        "pageId": ["collect-add"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"collect-limit\"]"],
+          "fingerprint": "div|data-annotation-id=collect-limit",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "批量采集仅支持同一平台链接，单次最多50条",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "pricing-priority",
+        "index": 3,
+        "title": "定价优先级",
+        "pageId": ["pricing-add"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"pricing-priority\"]"],
+          "fingerprint": "div|data-annotation-id=pricing-priority",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "店铺级>站点级>平台级优先级匹配",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "sku-unique",
+        "index": 4,
+        "title": "SKU唯一性",
+        "pageId": ["product-add"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"sku-unique\"]"],
+          "fingerprint": "div|data-annotation-id=sku-unique",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "SKU编码全局唯一，重复时提示修改",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "publish-retry",
+        "index": 5,
+        "title": "刊登重试",
+        "pageId": ["publish-add"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"publish-retry\"]"],
+          "fingerprint": "div|data-annotation-id=publish-retry",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "失败自动重试3次，间隔5分钟",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "diff-compare",
+        "index": 6,
+        "title": "采集差异对比",
+        "pageId": ["product-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"diff-compare\"]"],
+          "fingerprint": "div|data-annotation-id=diff-compare",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "重新采集后对比新旧数据差异，用户确认后更新",
+        "hasMarkdown": false,
+        "color": "#EF4444",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "product-pages",
+        "title": "商品管理",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-product-list",
+            "title": "商品列表",
+            "route": "product-list"
+          },
+          {
+            "type": "route",
+            "id": "route-product-add",
+            "title": "新增商品",
+            "route": "product-add"
+          },
+          {
+            "type": "route",
+            "id": "route-collect-list",
+            "title": "采集任务",
+            "route": "collect-list"
+          },
+          {
+            "type": "route",
+            "id": "route-collect-add",
+            "title": "新建采集",
+            "route": "collect-add"
+          },
+          {
+            "type": "route",
+            "id": "route-publish-list",
+            "title": "刊登任务",
+            "route": "publish-list"
+          },
+          {
+            "type": "route",
+            "id": "route-publish-add",
+            "title": "新建刊登",
+            "route": "publish-add"
+          },
+          {
+            "type": "route",
+            "id": "route-publish-fail",
+            "title": "刊登失败记录",
+            "route": "publish-fail"
+          },
+          {
+            "type": "route",
+            "id": "route-pricing-list",
+            "title": "定价规则",
+            "route": "pricing-list"
+          },
+          {
+            "type": "route",
+            "id": "route-pricing-add",
+            "title": "新增定价规则",
+            "route": "pricing-add"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-products",
+            "title": "商品中心PRD",
+            "markdownPath": "docs/prd-03-products.md"
+          }
+        ]
+      }
+    ]
+  }
+}

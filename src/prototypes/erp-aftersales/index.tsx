@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import './style.css';
 import {
   CustomerListPage,
@@ -58,13 +60,24 @@ export default function AftersalesApp() {
   const PageComponent = pageComponents[page] || CustomerListPage;
 
   return (
-    <ErpShell
-      title="客户与售后"
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <PageComponent onNavigate={setPage} />
-    </ErpShell>
+    <>
+      <ErpShell
+        title="客户与售后"
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <PageComponent onNavigate={setPage} />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }

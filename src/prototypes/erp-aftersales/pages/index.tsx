@@ -363,7 +363,7 @@ export function AftersaleListPage({ onNavigate }: { onNavigate: (page: string) =
   const [searchText, setSearchText] = useState('');
 
   return (
-    <div className="space-y-4">
+    <div data-annotation-id="platform-sync" className="space-y-4">
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">售后工单</h2>
         <div className="flex items-center gap-2">
@@ -500,7 +500,7 @@ export function AftersaleDetailPage({ onNavigate }: { onNavigate: (page: string)
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div data-annotation-id="exchange-flow" className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <Package size={16} className="text-gray-400" /> 退货商品
             </h3>
@@ -533,7 +533,7 @@ export function AftersaleDetailPage({ onNavigate }: { onNavigate: (page: string)
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div data-annotation-id="quality-check" className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <Shield size={16} className="text-gray-400" /> 质检表单
             </h3>
@@ -559,7 +559,7 @@ export function AftersaleDetailPage({ onNavigate }: { onNavigate: (page: string)
             </div>
           </div>
 
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div data-annotation-id="refund-approval" className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <CreditCard size={16} className="text-gray-400" /> 退款金额
             </h3>

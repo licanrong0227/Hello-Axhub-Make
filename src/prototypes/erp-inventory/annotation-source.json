@@ -1,0 +1,142 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-inventory",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "stock-formula",
+        "index": 1,
+        "title": "库存计算公式",
+        "pageId": ["inventory-overview"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"stock-formula\"]"],
+          "fingerprint": "div|data-annotation-id=stock-formula",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "可售库存=实体仓库存-已预占库存，虚拟仓不计入可售库存",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "static-lock",
+        "index": 2,
+        "title": "静态盘点锁定",
+        "pageId": ["stocktake-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"static-lock\"]"],
+          "fingerprint": "div|data-annotation-id=static-lock",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "静态盘点提交后锁定全仓，禁止所有出入库操作",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "dynamic-lock",
+        "index": 3,
+        "title": "动态盘点锁定",
+        "pageId": ["stocktake-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"dynamic-lock\"]"],
+          "fingerprint": "div|data-annotation-id=dynamic-lock",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "动态盘点仅锁定选中库区，不影响其他库区作业",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "virtual-warehouse",
+        "index": 4,
+        "title": "虚拟仓说明",
+        "pageId": ["warehouse-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"virtual-warehouse\"]"],
+          "fingerprint": "div|data-annotation-id=virtual-warehouse",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "系统预置4个虚拟仓（采购在途、退货、调拨在途、物损），不可编辑删除",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "safety-stock",
+        "index": 5,
+        "title": "安全库存",
+        "pageId": ["inventory-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"safety-stock\"]"],
+          "fingerprint": "div|data-annotation-id=safety-stock",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "系统配置全局默认，单个SKU可单独配置，未配置时沿用全局值",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "fifo-pick",
+        "index": 6,
+        "title": "先进先出",
+        "pageId": ["inventory-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"fifo-pick\"]"],
+          "fingerprint": "div|data-annotation-id=fifo-pick",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "同一SKU存放多个库位时，拣货按先进先出规则分配",
+        "hasMarkdown": false,
+        "color": "#EF4444",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-inventory",
+            "title": "库存管理PRD",
+            "markdownPath": "docs/prd-05-inventory.md"
+          }
+        ]
+      }
+    ]
+  }
+}

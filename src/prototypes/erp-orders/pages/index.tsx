@@ -149,7 +149,7 @@ export function OrderListPage({ onNavigate }: { onNavigate: (page: string) => vo
         </div>
       </div>
 
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div data-annotation-id="prestock-lock" className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="grid grid-cols-4 gap-3">
           <input
             type="text"
@@ -216,7 +216,7 @@ export function OrderListPage({ onNavigate }: { onNavigate: (page: string) => vo
         </div>
       )}
 
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="auto-review" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left">
@@ -322,7 +322,7 @@ export function OrderDetailPage({ onNavigate }: { onNavigate: (page: string) => 
 
       <div className="grid grid-cols-3 gap-4">
         <div className="col-span-2 space-y-4">
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div data-annotation-id="presale-manual" className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <FileText size={16} className="text-gray-400" /> 基本信息
             </h3>
@@ -383,7 +383,7 @@ export function OrderDetailPage({ onNavigate }: { onNavigate: (page: string) => 
         </div>
 
         <div className="space-y-4">
-          <div className="bg-white rounded-lg border border-gray-200 p-4">
+          <div data-annotation-id="warehouse-match" className="bg-white rounded-lg border border-gray-200 p-4">
             <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <MapPin size={16} className="text-gray-400" /> 收货地址
             </h3>
@@ -650,7 +650,7 @@ export function MergeSplitRulePage({ onNavigate }: { onNavigate: (page: string) 
         </button>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div data-annotation-id="merge-split-rule" className="grid grid-cols-2 gap-4">
         <div className="bg-white rounded-lg border border-gray-200 p-5">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
@@ -860,7 +860,7 @@ export function WavePickingRulePage({ onNavigate }: { onNavigate: (page: string)
         </button>
       </div>
 
-      <div className="bg-white rounded-lg border border-gray-200 p-5">
+      <div data-annotation-id="wave-rule" className="bg-white rounded-lg border border-gray-200 p-5">
         <h3 className="text-sm font-medium text-gray-900 mb-4">自动波次触发条件</h3>
         <p className="text-xs text-gray-500 mb-4">当满足以下任一条件时，系统自动生成拣货波次</p>
 

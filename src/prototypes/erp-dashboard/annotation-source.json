@@ -1,0 +1,139 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-dashboard",
+    "pageId": "home",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "todo-section",
+        "index": 1,
+        "title": "待办事项区",
+        "pageId": "home",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"todo-section\"]"],
+          "fingerprint": "div|data-annotation-id=todo-section",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "待办事项按类型分组展示，点击数字跳转对应列表页，待办数据按用户权限范围过滤",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "reminder-section",
+        "index": 2,
+        "title": "提醒通知区",
+        "pageId": "home",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"reminder-section\"]"],
+          "fingerprint": "div|data-annotation-id=reminder-section",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "库存预警、授权到期、刊登失败、同步失败提醒，未读标红",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "quick-entry",
+        "index": 3,
+        "title": "快捷入口区",
+        "pageId": "home",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"quick-entry\"]"],
+          "fingerprint": "div|data-annotation-id=quick-entry",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "用户自定义常用功能入口，支持拖拽排序",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "metrics-cards",
+        "index": 4,
+        "title": "核心数据概览",
+        "pageId": "home",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"metrics-cards\"]"],
+          "fingerprint": "div|data-annotation-id=metrics-cards",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按用户数据权限范围统计，超管看全量，普通用户看权限范围",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "recent-orders",
+        "index": 5,
+        "title": "最近订单",
+        "pageId": "home",
+        "locator": {
+          "selectors": ["[data-annotation-id=\"recent-orders\"]"],
+          "fingerprint": "div|data-annotation-id=recent-orders",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "订单金额同时展示原币种与人民币，汇率取下单时实时汇率",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "dashboard-pages",
+        "title": "工作台",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-home",
+            "title": "工作台首页",
+            "route": "home"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-dashboard",
+            "title": "工作台PRD",
+            "markdownPath": "docs/prd-02-dashboard.md"
+          }
+        ]
+      }
+    ]
+  }
+}

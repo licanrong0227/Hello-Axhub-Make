@@ -12,6 +12,8 @@ import {
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import { BusinessOverviewPage, SalesReportPage, InventoryReportPage, LogisticsReportPage } from './pages';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import './style.css';
 
 const route = defineHashPageRoute(
@@ -43,12 +45,23 @@ export default function ErpReportsApp() {
   const PageComponent = pageMap[page] || BusinessOverviewPage;
 
   return (
-    <ErpShell
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <PageComponent />
-    </ErpShell>
+    <>
+      <ErpShell
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <PageComponent />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }

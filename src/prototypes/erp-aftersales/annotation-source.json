@@ -1,0 +1,138 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-aftersales",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "platform-sync",
+        "index": 1,
+        "title": "仅平台同步",
+        "pageId": ["aftersale-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"platform-sync\"]"],
+          "fingerprint": "div|data-annotation-id=platform-sync",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "售后工单仅从平台自动同步，不支持手动创建",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "quality-check",
+        "index": 2,
+        "title": "质检库存流转",
+        "pageId": ["aftersale-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"quality-check\"]"],
+          "fingerprint": "div|data-annotation-id=quality-check",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "质检合格入实体仓，不合格入物损/报损虚拟仓",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "refund-approval",
+        "index": 3,
+        "title": "仅退款审批",
+        "pageId": ["aftersale-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"refund-approval\"]"],
+          "fingerprint": "div|data-annotation-id=refund-approval",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "仅退款类型需走审批流程，审批通过后执行退款",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "exchange-flow",
+        "index": 4,
+        "title": "换货流程",
+        "pageId": ["aftersale-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"exchange-flow\"]"],
+          "fingerprint": "div|data-annotation-id=exchange-flow",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "先退货入库，质检完成后创建新出库单发新货",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "aftersales-pages",
+        "title": "客户与售后",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "route",
+            "id": "route-customer-list",
+            "title": "客户列表",
+            "route": "customer-list"
+          },
+          {
+            "type": "route",
+            "id": "route-customer-detail",
+            "title": "客户详情",
+            "route": "customer-detail"
+          },
+          {
+            "type": "route",
+            "id": "route-aftersale-list",
+            "title": "工单列表",
+            "route": "aftersale-list"
+          },
+          {
+            "type": "route",
+            "id": "route-aftersale-detail",
+            "title": "工单详情",
+            "route": "aftersale-detail"
+          }
+        ]
+      },
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-aftersales",
+            "title": "客户与售后PRD",
+            "markdownPath": "docs/prd-09-aftersales.md"
+          }
+        ]
+      }
+    ]
+  }
+}

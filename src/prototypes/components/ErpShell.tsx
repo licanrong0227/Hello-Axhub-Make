@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   ChevronDown,
   ChevronRight,
@@ -15,6 +15,14 @@ export type MenuItem = {
   icon?: LucideIcon;
   children?: MenuItem[];
 };
+
+function isInIframe(): boolean {
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
+  }
+}
 
 type ErpShellProps = {
   title?: string;
@@ -33,6 +41,7 @@ export default function ErpShell({
   headerExtra,
   children,
 }: ErpShellProps) {
+  const [embedded] = useState(() => isInIframe());
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys, setOpenKeys] = useState<string[]>(() => {
     const parent = menuItems.find((item) =>
@@ -46,6 +55,14 @@ export default function ErpShell({
       prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
     );
   }, []);
+
+  if (embedded) {
+    return (
+      <div className="h-screen bg-gray-50 overflow-auto p-4">
+        {children}
+      </div>
+    );
+  }
 
   const sidebarWidth = collapsed ? 64 : 220;
 

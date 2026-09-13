@@ -13,6 +13,8 @@ import {
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import './style.css';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import {
   InventoryOverviewPage,
   InventoryListPage,
@@ -108,13 +110,24 @@ export default function InventoryApp() {
   const PageComponent = pageComponents[page] || InventoryOverviewPage;
 
   return (
-    <ErpShell
-      title="库存管理"
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <PageComponent onNavigate={setPage} />
-    </ErpShell>
+    <>
+      <ErpShell
+        title="库存管理"
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <PageComponent onNavigate={setPage} />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }

@@ -240,12 +240,14 @@ function PieChart({ data }: { data: typeof platformSales }) {
 function BusinessOverviewPage() {
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-5 gap-4">
-        <StatCard label="销售额" value="¥30.2万" change="+12.5%" up icon={DollarSign} color="text-green-600 bg-green-50" />
-        <StatCard label="订单量" value="823" change="+8.3%" up icon={ShoppingCart} color="text-blue-600 bg-blue-50" />
-        <StatCard label="客单价" value="¥367" change="+3.8%" up icon={Target} color="text-purple-600 bg-purple-50" />
-        <StatCard label="退款率" value="3.2%" change="-0.5%" up icon={RefreshCw} color="text-orange-600 bg-orange-50" />
-        <StatCard label="库存周转率" value="4.2次" change="+0.3" up icon={Activity} color="text-cyan-600 bg-cyan-50" />
+      <div data-annotation-id="data-scope" className="grid grid-cols-5 gap-4">
+        <div data-annotation-id="yoy-mom" className="contents">
+          <StatCard label="销售额" value="¥30.2万" change="+12.5%" up icon={DollarSign} color="text-green-600 bg-green-50" />
+          <StatCard label="订单量" value="823" change="+8.3%" up icon={ShoppingCart} color="text-blue-600 bg-blue-50" />
+          <StatCard label="客单价" value="¥367" change="+3.8%" up icon={Target} color="text-purple-600 bg-purple-50" />
+          <StatCard label="退款率" value="3.2%" change="-0.5%" up icon={RefreshCw} color="text-orange-600 bg-orange-50" />
+          <StatCard label="库存周转率" value="4.2次" change="+0.3" up icon={Activity} color="text-cyan-600 bg-cyan-50" />
+        </div>
       </div>
 
       <div className="grid grid-cols-3 gap-4">
@@ -272,7 +274,7 @@ function BusinessOverviewPage() {
       <div className="bg-white rounded-lg border border-gray-200">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">热销商品 TOP 10</h3>
-          <button className="text-xs text-blue-600 hover:text-blue-700">导出</button>
+          <button data-annotation-id="export" className="text-xs text-blue-600 hover:text-blue-700">导出</button>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -322,7 +324,7 @@ function SalesReportPage() {
   return (
     <div className="space-y-4">
       {/* Filters */}
-      <div className="bg-white rounded-lg border border-gray-200 p-4">
+      <div data-annotation-id="data-scope" className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="flex items-center gap-4 flex-wrap">
           <div className="flex items-center gap-2">
             <Calendar size={16} className="text-gray-400" />
@@ -352,14 +354,14 @@ function SalesReportPage() {
           <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700">
             <Search size={14} />查询
           </button>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
+           <button data-annotation-id="export" className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
             <Download size={14} />导出
           </button>
         </div>
       </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-5 gap-4">
+      <div data-annotation-id="yoy-mom" className="grid grid-cols-5 gap-4">
         <StatCard label="总销售额" value="¥88,400" change="+15.2%" up icon={DollarSign} color="text-green-600 bg-green-50" />
         <StatCard label="总订单量" value="1,622" change="+10.8%" up icon={ShoppingCart} color="text-blue-600 bg-blue-50" />
         <StatCard label="平均客单价" value="¥54.5" change="-2.1%" up={false} icon={Target} color="text-purple-600 bg-purple-50" />
@@ -381,7 +383,7 @@ function SalesReportPage() {
       </div>
 
       {/* Data Table */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="drill-down" className="bg-white rounded-lg border border-gray-200">
         <div className="px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">销售明细</h3>
         </div>
@@ -451,7 +453,7 @@ function InventoryReportPage() {
   return (
     <div className="space-y-4">
       {/* Summary */}
-      <div className="grid grid-cols-4 gap-4">
+      <div data-annotation-id="data-scope" className="grid grid-cols-4 gap-4">
         <StatCard label="总SKU数" value="455" change="+18" up icon={Package} color="text-blue-600 bg-blue-50" />
         <StatCard label="总库存量" value="72,800" change="-2,100" up={false} icon={Warehouse} color="text-green-600 bg-green-50" />
         <StatCard label="库存总值" value="¥297.8万" change="+5.2%" up icon={DollarSign} color="text-purple-600 bg-purple-50" />
@@ -459,14 +461,14 @@ function InventoryReportPage() {
       </div>
 
       {/* Inventory Summary Table */}
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="drill-down" className="bg-white rounded-lg border border-gray-200">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">库存汇总</h3>
           <div className="flex items-center gap-2">
             <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
               <Filter size={14} />筛选
             </button>
-            <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
+            <button data-annotation-id="export" className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
               <Download size={14} />导出
             </button>
           </div>
@@ -594,7 +596,7 @@ function LogisticsReportPage() {
   return (
     <div className="space-y-4">
       {/* Summary */}
-      <div className="grid grid-cols-4 gap-4">
+      <div data-annotation-id="data-scope" className="grid grid-cols-4 gap-4">
         <StatCard label="总发货量" value="3,740" change="+8.6%" up icon={Truck} color="text-blue-600 bg-blue-50" />
         <StatCard label="准时率" value="95.1%" change="+1.2%" up icon={CheckCircle2} color="text-green-600 bg-green-50" />
         <StatCard label="平均时效" value="8.9天" change="-0.5天" up icon={Clock} color="text-purple-600 bg-purple-50" />
@@ -605,7 +607,7 @@ function LogisticsReportPage() {
       <div className="bg-white rounded-lg border border-gray-200">
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
           <h3 className="text-sm font-medium text-gray-900">物流商对比</h3>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
+          <button data-annotation-id="export" className="flex items-center gap-1.5 px-3 py-1.5 text-sm border border-gray-200 rounded-md hover:bg-gray-50">
             <Download size={14} />导出
           </button>
         </div>

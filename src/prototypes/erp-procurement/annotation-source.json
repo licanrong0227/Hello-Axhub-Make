@@ -1,0 +1,124 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-procurement",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "suggest-auto",
+        "index": 1,
+        "title": "采购建议自动生成",
+        "pageId": ["suggest-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"suggest-auto\"]"],
+          "fingerprint": "div|data-annotation-id=suggest-auto",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "系统每日定时计算库存缺口，建议采购量=安全库存-当前可售库存",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "quote-expire",
+        "index": 2,
+        "title": "报价有效期",
+        "pageId": ["supplier-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"quote-expire\"]"],
+          "fingerprint": "div|data-annotation-id=quote-expire",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "供应商报价设置有效期，过期后不可创建采购单",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "receive-diff",
+        "index": 3,
+        "title": "入库差异处理",
+        "pageId": ["order-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"receive-diff\"]"],
+          "fingerprint": "div|data-annotation-id=receive-diff",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "入库数量与下单数量差异自动留存，支持部分入库或手动关闭",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "return-approval",
+        "index": 4,
+        "title": "退货审批",
+        "pageId": ["return-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"return-approval\"]"],
+          "fingerprint": "div|data-annotation-id=return-approval",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "采购退货需走审批流程，审批通过后方可执行",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "return-cost",
+        "index": 5,
+        "title": "退货冲减应付",
+        "pageId": ["return-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"return-cost\"]"],
+          "fingerprint": "div|data-annotation-id=return-cost",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "退货完成后按退货数量对应单价冲减供应商应付账款",
+        "hasMarkdown": false,
+        "color": "#EC4899",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": false,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-procurement",
+            "title": "采购管理PRD",
+            "markdownPath": "docs/prd-06-procurement.md"
+          }
+        ]
+      }
+    ]
+  }
+}

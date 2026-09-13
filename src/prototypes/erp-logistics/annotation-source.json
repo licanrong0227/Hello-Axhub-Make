@@ -1,0 +1,106 @@
+{
+  "documentVersion": 1,
+  "format": "axhub-annotation-source",
+  "presentation": {
+    "layerSelectors": []
+  },
+  "data": {
+    "version": 2,
+    "prototypeName": "erp-logistics",
+    "updatedAt": 1757587200000,
+    "nodes": [
+      {
+        "id": "freight-calc",
+        "index": 1,
+        "title": "运费自动计算",
+        "pageId": ["outbound-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"freight-calc\"]"],
+          "fingerprint": "div|data-annotation-id=freight-calc",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "按SKU预设重量×下单数量，匹配对应国家+重量段报价计算总运费",
+        "hasMarkdown": false,
+        "color": "#3B82F6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "overseas-warehouse",
+        "index": 2,
+        "title": "海外仓对接",
+        "pageId": ["outbound-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"overseas-warehouse\"]"],
+          "fingerprint": "div|data-annotation-id=overseas-warehouse",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "下发指令含订单号/收货信息/SKU/数量/库位要求/物流渠道，回传含出库单号/物流单号/发货时间/轨迹",
+        "hasMarkdown": false,
+        "color": "#10B981",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "customs-auto",
+        "index": 3,
+        "title": "报关自动生成",
+        "pageId": ["customs-list"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"customs-auto\"]"],
+          "fingerprint": "div|data-annotation-id=customs-auto",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "出口报关自动生成中文资料，目的国清关自动生成对应官方语言",
+        "hasMarkdown": false,
+        "color": "#8B5CF6",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      },
+      {
+        "id": "deduct-stock",
+        "index": 4,
+        "title": "出库扣减库存",
+        "pageId": ["outbound-detail"],
+        "locator": {
+          "selectors": ["[data-annotation-id=\"deduct-stock\"]"],
+          "fingerprint": "div|data-annotation-id=deduct-stock",
+          "path": []
+        },
+        "aiPrompt": "",
+        "annotationText": "发货后正式扣减实体仓对应库存，发货信息自动回传平台",
+        "hasMarkdown": false,
+        "color": "#F59E0B",
+        "images": [],
+        "createdAt": 1757587200000,
+        "updatedAt": 1757587200000
+      }
+    ]
+  },
+  "markdownMap": {},
+  "assetMap": {},
+  "directory": {
+    "nodes": [
+      {
+        "type": "folder",
+        "id": "prd-docs",
+        "title": "PRD文档",
+        "defaultExpanded": true,
+        "children": [
+          {
+            "type": "markdown",
+            "id": "prd-logistics",
+            "title": "仓储与物流PRD",
+            "markdownPath": "docs/prd-07-logistics.md"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -128,7 +128,7 @@ const supplierStatusColors: Record<string, string> = {
 export function SupplierListPage({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div data-annotation-id="quote-expire" className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">供应商列表</h2>
         <button onClick={() => onNavigate('supplier-add')} className="flex items-center gap-1.5 px-3 py-1.5 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">
           <Plus size={14} /> 新增供应商
@@ -374,7 +374,7 @@ export function PurchaseSuggestListPage({ onNavigate }: { onNavigate: (page: str
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div data-annotation-id="suggest-auto" className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-gray-900">采购建议</h2>
         <div className="flex items-center gap-2">
           <button className="flex items-center gap-1.5 px-3 py-1.5 border border-gray-200 text-sm rounded-md hover:bg-gray-50 text-gray-600">
@@ -769,7 +769,7 @@ export function PurchaseOrderDetailPage({ onNavigate }: { onNavigate: (page: str
           </div>
 
           <div className="bg-white rounded-lg border border-gray-200 p-4">
-            <h3 className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
+            <h3 data-annotation-id="receive-diff" className="text-sm font-medium text-gray-900 mb-3 flex items-center gap-1.5">
               <ClipboardList size={16} className="text-gray-400" /> 入库记录
             </h3>
             <table className="w-full text-sm">
@@ -849,7 +849,7 @@ export function PurchaseReturnListPage({ onNavigate }: { onNavigate: (page: stri
       <div className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="grid grid-cols-4 gap-3">
           <input type="text" placeholder="退货单号/原订单号" className="px-3 py-1.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500" />
-          <select className="px-3 py-1.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-600">
+          <select data-annotation-id="return-approval" className="px-3 py-1.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-600">
             <option value="">全部状态</option>
             <option>待审核</option>
             <option>退货中</option>
@@ -871,7 +871,7 @@ export function PurchaseReturnListPage({ onNavigate }: { onNavigate: (page: stri
         </div>
       </div>
 
-      <div className="bg-white rounded-lg border border-gray-200">
+      <div data-annotation-id="return-cost" className="bg-white rounded-lg border border-gray-200">
         <table className="w-full text-sm">
           <thead>
             <tr className="border-b border-gray-100 text-left">

@@ -14,6 +14,8 @@ import {
 import { useHashPage, defineHashPageRoute } from '../../common/useHashPage';
 import ErpShell from '../components/ErpShell';
 import './style.css';
+import { AnnotationViewer, type AnnotationSourceDocument } from '@axhub/annotation';
+import annotationSourceDocument from './annotation-source.json';
 import {
   ARListPage,
   ARWriteoffPage,
@@ -110,13 +112,24 @@ export default function FinanceApp() {
   const PageComponent = pageComponents[page] || ARListPage;
 
   return (
-    <ErpShell
-      title="财务管理"
-      menuItems={menuItems}
-      selectedKey={page}
-      onMenuSelect={setPage}
-    >
-      <PageComponent onNavigate={setPage} />
-    </ErpShell>
+    <>
+      <ErpShell
+        title="财务管理"
+        menuItems={menuItems}
+        selectedKey={page}
+        onMenuSelect={setPage}
+      >
+        <PageComponent onNavigate={setPage} />
+      </ErpShell>
+      <AnnotationViewer
+        source={annotationSourceDocument as unknown as AnnotationSourceDocument}
+        options={{
+          currentPageId: page,
+          toolbarEdge: 'right',
+          showToolbar: true,
+          emptyWhenNoData: false,
+        }}
+      />
+    </>
   );
 }
